@@ -12,11 +12,11 @@
         <scene sceneID="4IS-Uz-H59">
             <objects>
                 <viewController storyboardIdentifier="Home" id="DnN-uh-VOc" customClass="HomeViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bEZ-70-N0m" customClass="HomeViewController">
+                    <view key="view" contentMode="scaleToFill" id="bEZ-70-N0m">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-qY-YIY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-gj-q6Y">
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -24,16 +24,16 @@
                         <viewLayoutGuide key="safeArea" id="kJ1-t3-Arg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WZ2-qY-YIY" firstAttribute="top" secondItem="kJ1-t3-Arg" secondAttribute="top" id="U0U-fq-CeH"/>
-                            <constraint firstItem="kJ1-t3-Arg" firstAttribute="bottom" secondItem="WZ2-qY-YIY" secondAttribute="bottom" id="bSs-m6-yyM"/>
-                            <constraint firstItem="WZ2-qY-YIY" firstAttribute="leading" secondItem="kJ1-t3-Arg" secondAttribute="leading" id="ide-4L-FHK"/>
-                            <constraint firstItem="kJ1-t3-Arg" firstAttribute="trailing" secondItem="WZ2-qY-YIY" secondAttribute="trailing" id="xnI-Aj-4u1"/>
+                            <constraint firstItem="kJ1-t3-Arg" firstAttribute="bottom" secondItem="ktn-gj-q6Y" secondAttribute="bottom" id="Kf4-gG-pjU"/>
+                            <constraint firstItem="ktn-gj-q6Y" firstAttribute="leading" secondItem="kJ1-t3-Arg" secondAttribute="leading" id="Vnu-XJ-xXy"/>
+                            <constraint firstItem="kJ1-t3-Arg" firstAttribute="trailing" secondItem="ktn-gj-q6Y" secondAttribute="trailing" id="Wth-QW-1eG"/>
+                            <constraint firstItem="ktn-gj-q6Y" firstAttribute="top" secondItem="kJ1-t3-Arg" secondAttribute="top" id="udC-8M-hkj"/>
                         </constraints>
-                        <connections>
-                            <outlet property="tableView" destination="WZ2-qY-YIY" id="g9u-dC-ADR"/>
-                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="eJg-by-xxO"/>
+                    <connections>
+                        <outlet property="tableView" destination="ktn-gj-q6Y" id="9IP-Sy-pfY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pk7-m2-Yvh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

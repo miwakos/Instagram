@@ -12,7 +12,7 @@ import FirebaseFirestore
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
+        
     // 投稿データを格納する配列
     var postArray: [PostData] = []
 
