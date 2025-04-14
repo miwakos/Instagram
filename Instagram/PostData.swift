@@ -16,6 +16,7 @@ class PostData: NSObject {
     var date = ""
     var likes: [String] = []
     var isLiked: Bool = false
+    var comments: [[String: String]] = []  // name と comment のペア
 
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
@@ -47,9 +48,14 @@ class PostData: NSObject {
                 self.isLiked = true
             }
         }
+        
+        // [userName: comment] の dict を配列で格納
+        if let comments = postDic["comments"] as? [[String: String]] {
+            self.comments = comments
+        }
     }
 
     override var description: String {
-        return "PostData: name=\(name); caption=\(caption); date=\(date); likes=\(likes.count); id=\(id);"
+        return "PostData: name=\(name); caption=\(caption); date=\(date); likes=\(likes.count); comments=\(comments.count); id=\(id);"
     }
 }
