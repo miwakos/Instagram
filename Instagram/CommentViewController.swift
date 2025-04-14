@@ -30,10 +30,7 @@ class CommentViewController: UIViewController {
             return
         }
 
-        let commentData: [String: String] = [
-            "name": name,
-            "comment": commentText
-        ]
+        let commentData: [String: String] = [name: commentText]
         // 保存場所を定義
         let postRef = Firestore.firestore().collection(Const.PostPath).document(postId)
 

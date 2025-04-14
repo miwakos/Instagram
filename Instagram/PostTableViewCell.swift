@@ -14,10 +14,11 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-
+    @IBOutlet weak var commentsLabel: UILabel!
+    
     // PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
         // 画像の表示
@@ -45,7 +46,17 @@ class PostTableViewCell: UITableViewCell {
         }
         
         // コメント数の表示
-        commentLabel.text = "\(postData.comments.count)"
+        commentCountLabel.text = "\(postData.comments.count)"
+        
+        // コメント一覧の表示
+        var commentText = ""
+        for comment in postData.comments {
+            // 辞書のキー（ユーザー名）と値（コメント）を取り出す
+            if let name = comment.keys.first, let text = comment.values.first {
+                commentText += "\(name): \(text)\n"
+            }
+        }
+        self.commentsLabel.text = commentText
     }
     
     override func awakeFromNib() {
